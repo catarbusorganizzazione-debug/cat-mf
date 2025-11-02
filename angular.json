@@ -1,9 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
   "cli": {
     "analytics": false
   },
-  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "remote": {
@@ -34,31 +34,37 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [],
-            "scripts": [],
-            "extraWebpackConfig": "webpack.config.js",
-            "commonChunk": false
+            "styles": [
+              "src/styles.scss"
+            ],
+            "scripts": []
           },
           "configurations": {
-            "prod": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb"
-                }
-              ],
+            "production": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "optimization": true,
               "outputHashing": "all",
-              "extraWebpackConfig": "webpack.prod.config.js"
+              "sourceMap": false,
+              "extractLicenses": true,
+              "namedChunks": false,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ]
             },
             "development": {
               "buildOptimizer": false,
@@ -181,14 +187,13 @@
               ]
             }
           },
-          "defaultConfiguration": "develop"
+          "defaultConfiguration": "development"
         },
         "serve": {
-          "builder": "ngx-build-plus:dev-server",
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "remote:build:production",
-              "extraWebpackConfig": "webpack.prod.config.js"
+              "browserTarget": "remote:build:production"
             },
             "development": {
               "browserTarget": "remote:build:development"
@@ -220,17 +225,14 @@
           },
           "defaultConfiguration": "development",
           "options": {
-            "browserTarget": "remote:build",
-            "port": 4204,
-            "publicHost": "http://localhost:4204",
-            "extraWebpackConfig": "webpack.config.js"
+            "browserTarget": "remote:build:development",
+            "port": 4204
           }
         },
         "extract-i18n": {
-          "builder": "ngx-build-plus:extract-i18n",
+          "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "remote:build",
-            "extraWebpackConfig": "webpack.config.js"
+            "browserTarget": "remote:build:production"
           }
         },
         "test": {
