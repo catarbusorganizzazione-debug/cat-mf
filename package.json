@@ -4,34 +4,34 @@
   "private": false,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --port 4204",
-    "build": "ng build",
+    "start": "ng serve --configuration=development --port=4204",
+    "build": "ng build --configuration=production",
     "test": "ng test"
   },
   "dependencies": {
-    "@angular/animations": "^19.2.0",
-    "@angular/common": "^19.2.0",
-    "@angular/compiler": "^19.2.0",
-    "@angular/core": "^19.2.0",
-    "@angular/forms": "^19.2.0",
-    "@angular/platform-browser": "^19.2.0",
-    "@angular/platform-browser-dynamic": "^19.2.0",
-    "@angular/router": "^19.2.0",
+    "@angular/animations": "19.2.0",
+    "@angular/common": "19.2.0",
+    "@angular/compiler": "19.2.0",
+    "@angular/core": "19.2.0",
+    "@angular/forms": "19.2.0",
+    "@angular/platform-browser": "19.2.0",
+    "@angular/platform-browser-dynamic": "19.2.0",
+    "@angular/router": "19.2.0",
 
-    "@angular-architects/module-federation": "^20.0.6",
+    "@angular-architects/module-federation": "20.0.6",
 
-    "rxjs": "~6.6.7",
-    "tslib": "^2.6.2",
-    "zone.js": "~0.15.0",
-    "core-js": "^3.46.0"
+    "rxjs": "6.6.7",
+    "tslib": "2.6.2",
+    "zone.js": "0.15.0",
+    "core-js": "3.46.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^19.2.0",
-    "@angular/cli": "^19.2.0",
-    "@angular/compiler-cli": "^19.2.0",
-    "@types/node": "^22.5.0",
-    "typescript": "~5.6.2",
-    "sass": "^1.79.0",
-    "sass-loader": "^16.0.0"
+    "@angular-devkit/build-angular": "19.2.0",
+    "@angular/cli": "19.2.0",
+    "@angular/compiler-cli": "19.2.0",
+    "@types/node": "22.5.0",
+    "typescript": "5.6.2",
+    "sass": "1.79.0",
+    "sass-loader": "16.0.0"
   }
 }
