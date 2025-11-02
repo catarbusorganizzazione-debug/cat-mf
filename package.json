@@ -1,6 +1,7 @@
 {
   "name": "remote",
   "version": "0.0.57",
+  "private": false,
   "scripts": {
     "commit": "cz",
     "ng": "ng",
@@ -18,9 +19,8 @@
     "lib-release": "node ./scripts/ui-kit-merge.mjs",
     "add-version": "node ./scripts/add-version.mjs"
   },
-  "private": false,
   "dependencies": {
-    "@angular-architects/module-federation": "~14.2.2",
+    "@angular-architects/module-federation": "^13.1.0",
     "@angular/animations": "~13.3.1",
     "@angular/common": "~13.3.1",
     "@angular/compiler": "~13.3.1",
@@ -53,14 +53,13 @@
     "immer": "^9.0.12",
     "ngx-build-plus": "^13.0.1",
     "ngx-mask": "~13.1.0",
-    "node-sass": "^7.0.1",
-    "rxjs": "~6.6.0",
+    "rxjs": "~6.6.7",
     "tslib": "^2.3.0",
     "uuid": "^8.3.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
-    "@angular-devkit/architect": "^0.1601.4",
+    "@angular-devkit/architect": "~13.3.1",
     "@angular-devkit/build-angular": "~13.3.1",
     "@angular/cli": "~13.3.1",
     "@angular/compiler-cli": "~13.3.1",
@@ -69,7 +68,7 @@
     "@types/cors": "^2.8.12",
     "@types/file-saver": "^2.0.5",
     "@types/jasmine": "~3.8.0",
-    "@types/node": "^12.11.1",
+    "@types/node": "^16.18.0",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.57.0",
     "@typescript-eslint/parser": "^5.57.0",
@@ -101,8 +100,7 @@
     "style-loader": "^3.3.1",
     "tslint-config-prettier": "1.18.0",
     "typescript": "~4.6.3",
-    "v4": "^0.0.1",
-    "webpack": "~5.95.0"
+    "v4": "^0.0.1"
   },
   "lint-staged": {
     "*.{js,json,css,scss,less,md,ts,html,component.html}": [
