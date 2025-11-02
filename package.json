@@ -10,7 +10,7 @@
     "ng": "ng",
     "start": "ng serve --port 4204",
     "build": "ng build --configuration=prod",
-    "install-deps": "npm i --legacy-peer-deps --no-audit",
+    "install-deps": "npm i --legacy-peer-deps --no-audit"
   },
   "dependencies": {
     "@angular-architects/module-federation": "13.1.0",
