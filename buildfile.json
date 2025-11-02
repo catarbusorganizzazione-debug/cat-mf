@@ -1,6 +1,0 @@
-{
-    "build": {"name": "maven", "version": "3.8"},
-    "tools": [
-        {"name": "node", "version": "14"}
-    ]
-}
