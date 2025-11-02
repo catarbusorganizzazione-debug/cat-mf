@@ -1,0 +1,11 @@
+$cat-colors: (
+  grey-steel  :#768594
+);
+
+@function cat-color($color){
+  @if map-has-key($cat-colors, $color){
+    @return map-get($cat-colors, $color);
+  }
+  @warn "unknown color `#{$color}` in cat-colors";
+  @return null; 
+}
