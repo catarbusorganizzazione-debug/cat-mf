@@ -1,258 +1,37 @@
 {
-  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1,
-  "cli": {
-    "analytics": false
+  "name": "remote",
+  "version": "0.1.0",
+  "private": false,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve --configuration=development --port=4204",
+    "build": "ng build --configuration=production",
+    "test": "ng test"
   },
-  "newProjectRoot": "projects",
-  "projects": {
-    "remote": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss",
-          "viewEncapsulation": "None"
-        },
-        "@schematics/angular:application": {
-          "strict": true
-        }
-      },
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "cat",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/remote",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractLicenses": true,
-              "namedChunks": false,
-              "vendorChunk": false,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ]
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
-            },
-            "local-hotfix": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.local-hotfix-test.ts"
-                }
-              ]
-            },
-            "local-manutenzione": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.local-manutenzione.ts"
-                }
-              ]
-            },
-            "local-test": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.local-test.ts"
-                }
-              ]
-            },
-            "local-hotfix-collaudo": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.hotfix-collaudo.ts"
-                }
-              ]
-            },
-            "local-develop-ocp4": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.develop-ocp4-local.ts"
-                }
-              ]
-            },
-            "local-collaudo": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.local-collaudo.ts"
-                }
-              ]
-            },
-            "local-test-ocp4": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.test-ocp4.ts"
-                }
-              ]
-            },
-            "local-hotfix-test-ocp4": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true,
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.hotfix-test-ocp4.ts"
-                }
-              ]
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "browserTarget": "remote:build:production"
-            },
-            "development": {
-              "browserTarget": "remote:build:development"
-            },
-            "local-hotfix": {
-              "browserTarget": "remote:build:local-hotfix"
-            },
-            "local-test": {
-              "browserTarget": "remote:build:local-test"
-            },
-            "local-develop-ocp4": {
-              "browserTarget": "remote:build:local-develop-ocp4"
-            },
-            "local-hotfix-collaudo": {
-              "browserTarget": "remote:build:local-hotfix-collaudo"
-            },
-            "local-collaudo": {
-              "browserTarget": "remote:build:local-collaudo"
-            },
-            "local-test-ocp4": {
-              "browserTarget": "remote:build:local-test-ocp4"
-            },
-            "local-hotfix-test-ocp4": {
-              "browserTarget": "remote:build:local-hotfix-test-ocp4"
-            },
-            "local-manutenzione": {
-              "browserTarget": "remote:build:local-manutenzione"
-            }
-          },
-          "defaultConfiguration": "development",
-          "options": {
-            "browserTarget": "remote:build:development",
-            "port": 4204
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "remote:build:production"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "tsconfig.spec.json",
-            "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [],
-            "scripts": []
-          }
-        }
-      }
-    }
+  "dependencies": {
+    "@angular/animations": "19.2.0",
+    "@angular/common": "19.2.0",
+    "@angular/compiler": "19.2.0",
+    "@angular/core": "19.2.0",
+    "@angular/forms": "19.2.0",
+    "@angular/platform-browser": "19.2.0",
+    "@angular/platform-browser-dynamic": "19.2.0",
+    "@angular/router": "19.2.0",
+
+    "@angular-architects/module-federation": "20.0.0",
+
+    "core-js": "3.46.0",
+    "rxjs": "6.6.7",
+    "tslib": "2.6.2",
+    "zone.js": "0.15.0"
   },
-  "defaultProject": "remote"
+  "devDependencies": {
+    "@angular-devkit/build-angular": "19.2.0",
+    "@angular/cli": "19.2.0",
+    "@angular/compiler-cli": "19.2.0",
+    "@types/node": "22.5.0",
+    "typescript": "5.6.2",
+    "sass": "1.79.0",
+    "sass-loader": "16.0.0"
+  }
 }
