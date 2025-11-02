@@ -119,5 +119,8 @@
       "prebump": "if test -f package-lock.json; then mv package-lock.json package-lock-IGNORE.json; else exit 0; fi | bash",
       "posttag": "if test -f package-lock-IGNORE.json; then mv package-lock-IGNORE.json package-lock.json; else exit 0; fi | bash"
     }
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
