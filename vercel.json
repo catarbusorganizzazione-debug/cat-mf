@@ -5,7 +5,8 @@
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/remote"
+        "distDir": "dist/remote",
+        "installCommand": "npm install --legacy-peer-deps --no-audit"
       }
     }
   ],
