@@ -5,7 +5,8 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build --configuration production",
-    "preview": "npx http-server dist/app -p 4173"
+    "preview": "npx http-server dist/app -p 4173",
+    "vercel-build": "npm install --legacy-peer-deps --no-audit && npm run build"
   },
   "dependencies": {
     "@angular/animations": "^18.2.0",
