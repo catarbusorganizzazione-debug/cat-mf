@@ -1,17 +1,11 @@
-import { Component, ViewEncapsulation } from '@angular/core';
-import { Title } from '@angular/platform-browser';
-import { TranslateService } from '@ngx-translate/core';
+import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterModule],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  constructor(private translate: TranslateService, private titleService: Title) {
-    translate.setDefaultLang('it');
-    translate.use('it');
-    titleService.setTitle('Remote');
-  }
-}
+export class AppComponent {}
